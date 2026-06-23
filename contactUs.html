@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact LUGX Gaming – reach out with your questions and feedback."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Contact Us – LUGX Gaming</title>
+  </head>
+
+  <body>
+    <!-- ========== HEADER ========== -->
+    <div class="headerContainer">
+      <div class="header">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="LUGX Logo" />
+        </a>
+        <button
+          class="menuToggle"
+          id="menuToggle"
+          aria-label="Toggle navigation"
+        >
+          &#9776;
+        </button>
+        <nav class="headerLinks" id="headerLinks">
+          <a href="index.html">Home</a>
+          <a href="index.html#trending">Our Shop</a>
+          <a href="index.html#mostPlayed">Product Details</a>
+          <a href="contactUs.html" class="active">Contact Us</a>
+          <button class="btn" id="signInBtn">Sign In</button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ========== CONTACT FORM ========== -->
+    <div class="contactHero">
+      <h1>Get In Touch</h1>
+      <p>Have a question or feedback? We'd love to hear from you.</p>
+    </div>
+
+    <div class="formContainer">
+      <form id="contactForm" novalidate>
+        <h2>Send Us a Message</h2>
+
+        <label for="contactName">Name</label>
+        <input type="text" id="contactName" placeholder="Your full name" />
+
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" placeholder="your@email.com" />
+
+        <label for="contactAge">Age</label>
+        <input
+          type="number"
+          id="contactAge"
+          placeholder="Your age"
+          min="1"
+          max="120"
+        />
+
+        <label for="contactMsg">Message</label>
+        <textarea
+          id="contactMsg"
+          name="question"
+          cols="30"
+          rows="5"
+          placeholder="Write your message…"
+        ></textarea>
+
+        <!-- Validation message -->
+        <p id="formFeedback" class="formFeedback"></p>
+
+        <button type="button" class="btn" id="sendBtn">Send Message</button>
+      </form>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div class="footerContainer">
+      <div class="footer">
+        copyright &copy; <span id="footerYear"></span> LUGX Gaming Company. All
+        rights reserved.
+      </div>
+    </div>
+
+    <!-- ========== SIGN-IN MODAL ========== -->
+    <div class="modalOverlay" id="modalOverlay">
+      <div class="modal">
+        <button class="modalClose" id="modalClose">&times;</button>
+        <h2>Sign In</h2>
+        <input type="text" id="modalUsername" placeholder="Username" />
+        <input type="password" id="modalPassword" placeholder="Password" />
+        <p id="modalMsg" class="modalMsg"></p>
+        <button class="btn" id="modalSubmit">Login</button>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

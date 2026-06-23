@@ -1,0 +1,832 @@
+/* ============================================================
+   LUGX GAMING – MAIN STYLESHEET
+   Covers: box-sizing, Flexbox, transitions, transforms,
+           pseudo-classes (:hover, :active), Media Queries
+   ============================================================ */
+
+/* ---------- RESET & BASE ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0f0f1a;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* ---------- HEADER ---------- */
+.headerContainer {
+  background-color: #1a0a40;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(108, 63, 245, 0.4);
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.logo img {
+  width: 140px;
+  transition: transform 0.3s;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.headerLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerLinks a {
+  text-decoration: none;
+  color: #c9b8ff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  font-size: 0.95rem;
+}
+
+.headerLinks a:hover {
+  background-color: #6c3ff5;
+  color: #fff;
+}
+
+.headerLinks a.active {
+  background-color: #6c3ff5;
+  color: #fff;
+}
+
+/* Hamburger – hidden on desktop */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ---------- SHARED BUTTON ---------- */
+.btn {
+  border-radius: 50px;
+  height: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0 22px;
+  background-color: #ff7a3d;
+  color: #fff;
+  text-transform: uppercase;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  background-color: #e05d20;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* ---------- LANDING PAGE ---------- */
+.landingPageContainer {
+  background: linear-gradient(135deg, #1a0a40 0%, #2e1163 60%, #6c3ff5 100%);
+  border-radius: 0 0 80px 80px;
+}
+
+.landingPage {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 90px 100px 80px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.leftSide {
+  flex: 6;
+}
+
+.welcome {
+  font-size: 1.1rem;
+  color: #ff7a3d;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.slogan {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #c9b8ff;
+  width: 85%;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* Search bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.searchBar input {
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  width: 280px;
+  height: 50px;
+  font-size: 1rem;
+  padding: 0 20px;
+  color: #fff;
+  transition: border-color 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.searchBar input::placeholder {
+  color: #a89fd4;
+}
+
+.searchBar input:focus {
+  border-color: #ff7a3d;
+}
+
+.searchResult {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  min-height: 22px;
+  color: #ffd580;
+  font-weight: 500;
+}
+
+/* Landing right image */
+.imageContainer {
+  flex: 5;
+}
+
+.imageContainer img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(108, 63, 245, 0.5);
+  transition: transform 0.4s;
+}
+
+.imageContainer img:hover {
+  transform: scale(1.03) rotate(-1deg);
+}
+
+/* ---------- SECTION SHARED STYLES ---------- */
+.trendingContainer {
+  max-width: 1300px;
+  margin: 90px auto 0;
+  padding: 0 20px;
+}
+
+.trendingHeader,
+.mostHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.trendingContainer > span,
+.mostContainer span,
+.categoryHeader span {
+  display: block;
+  text-transform: uppercase;
+  color: #ff7a3d;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.trendingHeader h1,
+.mostHeader h1,
+.categoryHeader h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+/* ---------- TRENDING CARDS ---------- */
+.trendingCard {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.trendingCard .card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  flex: 1;
+  min-width: 200px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.trendingCard .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(108, 63, 245, 0.4);
+}
+
+.trendingCard .card > img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.trendingCard .card .cardInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(26, 10, 64, 0.95), transparent);
+  border-radius: 0 0 20px 20px;
+  padding: 40px 16px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.trendingCard .cardName p {
+  color: #a89fd4;
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.trendingCard .cardName h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.trendingCard .cardInfo .icon img {
+  width: 44px;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+
+.trendingCard .cardInfo .icon img:hover {
+  transform: scale(1.3) rotate(10deg);
+}
+
+/* ---------- MOST PLAYED ---------- */
+.mostContainer {
+  background: linear-gradient(135deg, #1a0a40, #2e1163);
+  margin-top: 90px;
+  padding: 60px 40px;
+  border-radius: 60px;
+}
+
+.mostPlayed {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.mostCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mostCards .card {
+  flex: 1;
+  min-width: 150px;
+  background-color: #0f0f1a;
+  border-radius: 20px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  text-align: center;
+}
+
+.mostCards .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(108, 63, 245, 0.4);
+}
+
+.cardImg img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.mostCards .cardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 10px 18px;
+  gap: 8px;
+}
+
+.mostCards .cardInfo .genre {
+  color: #a89fd4;
+  font-size: 0.8rem;
+}
+
+.mostCards .cardInfo .cardName {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.mostCards .cardInfo .btn {
+  height: 38px;
+  font-size: 0.8rem;
+  padding: 0 18px;
+}
+
+/* ---------- TOP CATEGORIES ---------- */
+.categoryContainer {
+  margin-top: 90px;
+  padding: 0 20px;
+}
+
+.category {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.categoryHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.categoryCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.categoryCards .card {
+  flex: 1;
+  min-width: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.categoryCards .card:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 16px 40px rgba(108, 63, 245, 0.5);
+}
+
+.categoryCards .card .genre {
+  background-color: #6c3ff5;
+  text-align: center;
+  color: #fff;
+  padding: 12px 0 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 20px 20px 0 0;
+}
+
+.categoryCards .card .cardImg {
+  position: relative;
+  top: -18px;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+.categoryCards .card .cardImg img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.categoryCards .card:hover .cardImg img {
+  transform: scale(1.08);
+}
+
+/* ---------- VISIT COUNTER BANNER ---------- */
+.counterBanner {
+  max-width: 1300px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.counterBanner p {
+  background: linear-gradient(90deg, #6c3ff5, #ff7a3d);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 16px 30px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+/* ---------- FOOTER ---------- */
+.footerContainer {
+  background: linear-gradient(135deg, #1a0a40, #2e1163);
+  height: 140px;
+  border-radius: 60px 60px 0 0;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  max-width: 1300px;
+  margin: auto;
+  text-align: center;
+  color: #c9b8ff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* ---------- SIGN-IN MODAL ---------- */
+.modalOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalOverlay.active {
+  display: flex;
+}
+
+.modal {
+  background: #1a0a40;
+  border: 1px solid #6c3ff5;
+  border-radius: 20px;
+  padding: 40px 36px;
+  width: 360px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 60px rgba(108, 63, 245, 0.5);
+  transform: translateY(-30px);
+  transition: transform 0.3s;
+}
+
+.modalOverlay.active .modal {
+  transform: translateY(0);
+}
+
+.modal h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.modal input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  height: 48px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s;
+}
+
+.modal input:focus {
+  border-color: #ff7a3d;
+}
+
+.modal input::placeholder {
+  color: #a89fd4;
+}
+
+.modalClose {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: #a89fd4;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modalClose:hover {
+  color: #ff7a3d;
+}
+
+.modalMsg {
+  font-size: 0.9rem;
+  min-height: 18px;
+  text-align: center;
+}
+
+/* ---------- CONTACT PAGE ---------- */
+.contactHero {
+  background: linear-gradient(135deg, #1a0a40 0%, #2e1163 60%, #6c3ff5 100%);
+  text-align: center;
+  padding: 80px 20px 100px;
+  border-radius: 0 0 60px 60px;
+}
+
+.contactHero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.contactHero p {
+  color: #c9b8ff;
+  font-size: 1.1rem;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.formContainer form {
+  background: linear-gradient(160deg, #1a0a40, #2e1163);
+  border: 1px solid rgba(108, 63, 245, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 36px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(108, 63, 245, 0.25);
+}
+
+.formContainer form h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.formContainer form label {
+  color: #c9b8ff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.formContainer form input,
+.formContainer form textarea {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+  resize: none;
+}
+
+.formContainer form input::placeholder,
+.formContainer form textarea::placeholder {
+  color: #6a5ea0;
+}
+
+.formContainer form input:focus,
+.formContainer form textarea:focus {
+  border-color: #ff7a3d;
+}
+
+.formFeedback {
+  font-size: 0.9rem;
+  min-height: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* Tablet: ≤ 1024px */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 40px;
+  }
+
+  .landingPage {
+    padding: 70px 40px 60px;
+    flex-direction: column;
+  }
+
+  .slogan {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .imageContainer {
+    width: 100%;
+  }
+
+  .imageContainer img {
+    width: 80%;
+    margin: auto;
+    display: block;
+  }
+
+  .trendingContainer {
+    padding: 0 40px;
+  }
+
+  .mostContainer {
+    padding: 50px 30px;
+    border-radius: 40px;
+  }
+
+  .categoryContainer {
+    padding: 0 40px;
+  }
+}
+
+/* Mobile: ≤ 768px */
+@media (max-width: 768px) {
+  /* Mobile nav */
+  .menuToggle {
+    display: block;
+  }
+
+  .headerLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #1a0a40;
+    padding: 20px;
+    gap: 10px;
+    z-index: 99;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .headerLinks.open {
+    display: flex;
+  }
+
+  .headerLinks a {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .headerLinks .btn {
+    width: 100%;
+  }
+
+  .header {
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .landingPage {
+    padding: 50px 20px 40px;
+  }
+
+  .slogan {
+    font-size: 1.8rem;
+  }
+
+  .searchBar input {
+    width: 100%;
+  }
+
+  .trendingContainer {
+    padding: 0 16px;
+  }
+
+  .trendingCard {
+    flex-direction: column;
+  }
+
+  .trendingCard .card {
+    min-width: 100%;
+  }
+
+  .mostContainer {
+    padding: 40px 16px;
+    border-radius: 30px;
+    margin-top: 50px;
+  }
+
+  .mostCards {
+    flex-direction: column;
+  }
+
+  .mostCards .card {
+    min-width: 100%;
+  }
+
+  .categoryCards {
+    flex-wrap: wrap;
+  }
+
+  .categoryCards .card {
+    min-width: calc(50% - 10px);
+    flex: none;
+  }
+
+  .categoryContainer {
+    padding: 0 16px;
+  }
+
+  .footerContainer {
+    border-radius: 40px 40px 0 0;
+  }
+
+  /* Contact form */
+  .contactHero h1 {
+    font-size: 2rem;
+  }
+
+  .formContainer form {
+    padding: 28px 20px;
+  }
+}
+
+/* Small mobile: ≤ 480px */
+@media (max-width: 480px) {
+  .slogan {
+    font-size: 1.5rem;
+  }
+
+  .landingPage {
+    padding: 40px 14px 30px;
+  }
+
+  .categoryCards .card {
+    min-width: 100%;
+  }
+
+  .counterBanner p {
+    font-size: 0.85rem;
+    padding: 14px 20px;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
